@@ -5,7 +5,7 @@ exports.handler = (event, context, callback) => {
     
     // Add item with default host
     var random1 = Math.floor(Math.random() * 500) + 1;
-    var random2 = Math.floor(Math.random() * 500) + 1;
+    var random2 = Math.floor(Math.random() * 350) + 1;
 
     Sender.addItem('Zabbix server','MikeTemplateItemKey', random1);
     Sender.addItem('Zabbix server','MikeJunk', random2);
