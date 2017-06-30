@@ -3,12 +3,15 @@ var Sender = new ZabbixSender({host: 'ZabbixPla-ZabbixAu-1P80076K4P8M7-196552549
 exports.handler = (event, context, callback) => {
 
     
-    // Add item with default host
-    var random1 = Math.floor(Math.random() * 500) + 1;
-    var random2 = Math.floor(Math.random() * 350) + 1;
+    function getRandomNum(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 
-    Sender.addItem('Zabbix server','MikeTemplateItemKey', random1);
-    Sender.addItem('Zabbix server','MikeJunk', random2);
+    // Add item with pre-defined Host, add pre-defined Key, use random numbers for Value
+    Sender.addItem('Zabbix server','MikeTemplateItemKey', getRandomNum(100,1000));
+    Sender.addItem('Zabbix server','MikeJunk', getRandomNum(500,1000));
     
     // Send the items to zabbix trapper
     Sender.send(function(err, res) {
