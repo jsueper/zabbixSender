@@ -1,4 +1,4 @@
-var ZabbixSender = require('./index');
+var ZabbixSender = require('./zabbix');
 var Sender = new ZabbixSender({host: 'ZabbixPla-ZabbixAu-1P80076K4P8M7-1965525499.us-east-2.elb.amazonaws.com'});
 
 // Add items to request
