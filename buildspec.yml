@@ -1,0 +1,11 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install
+      - aws cloudformation package --template-file ZabbixSamTemplate.yaml --s3-bucket codepipeline-bucket-temp 
+                                   --output-template-file NewZabbixSamTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - NewZabbixSamTemplate.yaml
