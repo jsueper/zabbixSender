@@ -1,0 +1,9 @@
+{
+  "name": "node-zabbix-sender",
+  "version": "1.0.8",
+  "description": "A zabbix_sender implementation, to send zabbix item(s) using the zabbix trapper protocol.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
